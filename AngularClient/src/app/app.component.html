@@ -1,0 +1,32 @@
+<div fxLayout="row" fxLayout.xs="column" [ngStyle.xs]="{'margin-top.px': 65}">
+    <button class="drawButton" mat-raised-button color="primary" (click)="draw()">DRAW</button> 
+    <div  fxFlex.xs="80%" fxFlexOffset.xs="0%" fxFlex.gt-xs="33%" fxFlexOffset.gt-xs="0%" [ngStyle.xs]="{'margin-right.px': 10}" [ngClass]="{'card': true, 'cardYellow': bgColor[0]=='yellow', 'cardOrange': bgColor[0]=='orange', 'cardRed': bgColor[0]=='red'}" >
+        <div style="font-size: 30px;" fxFlex="10%"  fxLayoutAlign="left top"        (click)="plusCount(0)">+</div> 
+        <div style="font-size: 30px;" fxFlex="100%" fxLayoutAlign="center center"   (click)="showEnglish[0] = !showEnglish[0]">{{showEnglish[0] ? allCards[listIterator+0]?.pl : allCards[listIterator+0]?.sp}}</div> 
+        <div style="font-size: 30px;" fxFlex="10%"  fxLayoutAlign="right top"       (click)="minusCount(0)">-</div> 
+    </div>
+    <div fxFlex.xs="80%" fxFlexOffset.xs="0%" fxFlex.gt-xs="33%" fxFlexOffset.gt-xs="33%" [ngStyle.xs]="{'margin-right.px': 10}" [ngClass]="{'card': true, 'cardYellow': bgColor[1]=='yellow', 'cardOrange': bgColor[1]=='orange', 'cardRed': bgColor[1]=='red'}" >
+        <div style="font-size: 30px;" fxFlex="10%"  fxLayoutAlign="left top"        (click)="plusCount(1)">+</div> 
+        <div style="font-size: 30px;" fxFlex="100%" fxLayoutAlign="center center"   (click)="showEnglish[1] = !showEnglish[1]">{{showEnglish[1] ? allCards[listIterator+1]?.pl : allCards[listIterator+1]?.sp}}</div> 
+        <div style="font-size: 30px;" fxFlex="10%"  fxLayoutAlign="right top"       (click)="minusCount(1)">-</div> 
+    </div> 
+</div> 
+<div fxLayout="row" fxLayout.xs="column">
+    <div fxFlex.xs="80%" fxFlexOffset.xs="0%" fxFlex.gt-xs="33%" fxFlexOffset.gt-xs="33%" [ngStyle.xs]="{'margin-right.px': 10}" [ngClass]="{'card': true, 'cardYellow': bgColor[2]=='yellow', 'cardOrange': bgColor[2]=='orange', 'cardRed': bgColor[2]=='red'}">
+        <div style="font-size: 30px;" fxFlex="10%"  fxLayoutAlign="left top"        (click)="plusCount(2)">+</div> 
+        <div style="font-size: 30px;" fxFlex="100%" fxLayoutAlign="center center"   (click)="showEnglish[2] = !showEnglish[2]">{{showEnglish[2] ? allCards[listIterator+2]?.pl : allCards[listIterator+2]?.sp}}</div> 
+        <div style="font-size: 30px;" fxFlex="10%"  fxLayoutAlign="right top"       (click)="minusCount(2)">-</div> 
+    </div> 
+</div> 
+<div fxLayout="row" fxLayout.xs="column">
+    <div fxFlex.xs="80%" fxFlexOffset.xs="0%" fxFlex.gt-xs="33%" fxFlexOffset.gt-xs="0%" [ngStyle.xs]="{'margin-right.px': 10}"  [ngClass]="{'card': true, 'cardYellow': bgColor[3]=='yellow', 'cardOrange': bgColor[3]=='orange', 'cardRed': bgColor[3]=='red'}">
+        <div style="font-size: 30px;" fxFlex="10%"  fxLayoutAlign="left top"        (click)="plusCount(3)">+</div> 
+        <div style="font-size: 30px;" fxFlex="100%" fxLayoutAlign="center center"   (click)="showEnglish[3] = !showEnglish[3]">{{showEnglish[3] ? allCards[listIterator+3]?.pl : allCards[listIterator+3]?.sp}}</div> 
+        <div style="font-size: 30px;" fxFlex="10%"  fxLayoutAlign="right top"       (click)="minusCount(3)">-</div> 
+    </div> 
+    <div fxFlex.xs="80%" fxFlexOffset.xs="0%" fxFlex.gt-xs="33%" fxFlexOffset.gt-xs="33%" [ngStyle.xs]="{'margin-right.px': 10, 'flex': 100}" [ngClass]="{'card': true, 'cardYellow': bgColor[4]=='yellow', 'cardOrange': bgColor[4]=='orange', 'cardRed': bgColor[4]=='red'}">
+        <div style="font-size: 30px;" fxFlex="10%"  fxLayoutAlign="left top"        (click)="plusCount(4)">+</div> 
+        <div style="font-size: 30px;" fxFlex="100%" fxLayoutAlign="center center"   (click)="showEnglish[4] = !showEnglish[4]">{{showEnglish[4] ? allCards[listIterator+4]?.pl : allCards[listIterator+4]?.sp}}</div> 
+        <div style="font-size: 30px;" fxFlex="10%"  fxLayoutAlign="right top"       (click)="minusCount(4)">-</div> 
+    </div> 
+</div> 

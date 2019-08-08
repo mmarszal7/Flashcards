@@ -1,0 +1,41 @@
+.card {
+    border: 3px solid black;  
+    background-color: white;
+    box-shadow: 5px 5px 5px grey;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 20px 50px;
+    padding: 20px;
+    height: 150px;
+    transition: all .3s ease-in-out;
+    text-align: center;
+
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none;  
+            
+}
+
+.card:hover {
+    
+}
+
+.cardRed{
+    background-color: red;
+}
+.cardYellow{
+    background-color: yellow;
+}
+.cardOrange{
+    background-color: orange;
+}
+
+.drawButton{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 15px;
+}
