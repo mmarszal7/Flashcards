@@ -7,9 +7,10 @@ using FireSharp.Response;
 using System.Linq;
 using System;
 using System.Collections.ObjectModel;
-using NLog;
 using System.ComponentModel;
 using System.Windows.Forms;
+using Newtonsoft.Json;
+using System.IO;
 
 namespace SpanishFlashcards
 {
@@ -17,7 +18,6 @@ namespace SpanishFlashcards
     {
         #region Fields, Properties and Constructor
 
-        protected static readonly Logger Logger = LogManager.GetCurrentClassLogger();
         public ObservableCollection<Card> Cards { get; set; }
         private List<Card> allCards = new List<Card>();
         private int listIterator = 0;
@@ -41,6 +41,7 @@ namespace SpanishFlashcards
                 IFirebaseClient client = new FirebaseClient(new FirebaseConfig { BasePath = "https://spannishwords.firebaseio.com/" });
                 FirebaseResponse response = await client.GetAsync("words");
                 allCards = response.ResultAs<List<Card>>().Where(c => c.Repeat == true).OrderBy(x => rnd.Next()).ToList();
+                //allCards = JsonConvert.DeserializeObject<List<Card>>(File.ReadAllText("Data/palabras.json")).OrderBy(x => rnd.Next()).ToList();
                 Cards.Clear();
                 allCards.Take(5).ToList().ForEach(c => Cards.Add(c));
 
@@ -48,7 +49,6 @@ namespace SpanishFlashcards
             }
             catch (Exception e)
             {
-                Logger.Error(e, "Problem with Firebase connection");
                 DialogResult result = MessageBox.Show("Problem with Firebase connection.", "Connection Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 if (result == DialogResult.OK)
                     System.Environment.Exit(1);
